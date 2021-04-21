@@ -1,0 +1,74 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "name": "Missão Impossível",
+      "releaseDate": 1996,
+      "imageURL": "https://cdn.awsli.com.br/600x450/393/393351/produto/45882239/2cd5179169.jpg",
+      "genre": "Ação",
+      "rate": 3
+    },
+    {
+      "id": 2,
+      "name": "Missão Impossível II",
+      "releaseDate": 1996,
+      "imageURL": "https://cdn.awsli.com.br/600x450/393/393351/produto/45882239/2cd5179169.jpg",
+      "genre": "Ação",
+      "rate": 3
+    },
+    {
+      "id": 3,
+      "name": "Missão Impossível III",
+      "releaseDate": 1996,
+      "imageURL": "https://cdn.awsli.com.br/393/393351/produto/45891793/31d6bb74c8.jpg",
+      "genre": "Ação",
+      "rate": 3
+    },
+    {
+      "id": 4,
+      "name": "Missão Impossível IV",
+      "releaseDate": 1996,
+      "imageURL": "https://cdn.awsli.com.br/600x450/393/393351/produto/45882239/2cd5179169.jpg",
+      "genre": "Ação",
+      "rate": 3
+    },
+    {
+      "id": 5,
+      "name": "Missão Impossível V",
+      "releaseDate": 1996,
+      "imageURL": "https://upload.wikimedia.org/wikipedia/pt/7/74/Mission_Impossible_%E2%80%93_Rogue_Nation_poster.jpg",
+      "genre": "Ação",
+      "rate": 3
+    },
+    {
+      "name": "Cidade de Deus",
+      "releaseDate": "2010",
+      "genre": "Suspense",
+      "imageURL": "https://cdn.awsli.com.br/600x450/393/393351/produto/45882239/2cd5179169.jpg",
+      "rate": "5",
+      "id": 9
+    },
+    {
+      "name": "Monstros SA",
+      "releaseDate": "2000",
+      "genre": "Comédia",
+      "imageURL": "https://static.wikia.nocookie.net/dublagem/images/1/19/C725380264f078f58ad5ec51a9f94780.jpg/revision/latest?cb=20201224063141&path-prefix=pt-br",
+      "rate": "5",
+      "id": 10
+    },
+    {
+      "name": "Esquadrão Trovão",
+      "releaseDate": "2021",
+      "genre": "Comédia",
+      "rate": "1",
+      "id": 11
+    },
+    {
+      "name": "Jack Reacher",
+      "releaseDate": "2012",
+      "genre": "Ação",
+      "rate": "5",
+      "id": 12
+    }
+  ]
+}

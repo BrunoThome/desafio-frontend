@@ -1,24 +1,37 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './Components/Home';
+import Header from './Components/Header';
+import NotFound from './Components/NotFound';
+import MovieRegister from './Components/Movies/MovieRegister';
+import styled from 'styled-components';
+
 import './App.css';
+
+const StyledApp = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 30px);
+`;
+
+const StyledAppBody = styled.main`
+  flex-grow: 1;
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <StyledApp>
+      <BrowserRouter>
+        <Header />
+        <StyledAppBody>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="register" element={<MovieRegister />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </StyledAppBody>
+      </BrowserRouter>
+    </StyledApp>
   );
 }
 

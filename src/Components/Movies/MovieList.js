@@ -8,22 +8,19 @@ const StyledMovieList = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
-  @media (min-width: 576px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
 
   @media (min-width: 720px) {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 `;
 
 const MovieList = () => {
   const dispatch = useDispatch();
-  const movies = useSelector((state) => state.movies);
+  const { movies, filters } = useSelector((state) => state);
 
   React.useEffect(() => {
-    dispatch({ type: 'FETCH_MOVIES' });
-  }, [dispatch]);
+    dispatch({ type: 'FETCH_MOVIES', payload: { meta: 'FILTERED' } });
+  }, [dispatch, filters]);
 
   if (movies.loading) return <p>Carregando</p>;
   if (movies.error) return <Error error={movies.error} />;

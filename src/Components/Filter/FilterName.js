@@ -1,25 +1,13 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
 
-const FilterName = () => {
-  const [name, setName] = React.useState('');
-  const dispatch = useDispatch();
-
+const FilterName = ({ placeholder, value, setValue }) => {
   return (
-    <>
-      <input
-        type="text"
-        placeholder="Digite o nome"
-        value={name}
-        onChange={({ target }) => setName(target.value)}
-      />
-      <button
-        onClick={() => dispatch({ type: 'FETCH_MOVIES', payload: { name } })}
-      >
-        Buscar
-      </button>
-      <button onClick={() => dispatch({ type: 'FETCH_MOVIES' })}>Limpar</button>
-    </>
+    <input
+      type="text"
+      placeholder={placeholder}
+      value={value}
+      onChange={({ target }) => setValue(target.value)}
+    />
   );
 };
 

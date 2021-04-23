@@ -1,13 +1,21 @@
-import { all, call, put, takeEvery } from 'redux-saga/effects';
+import { createSearchParams } from 'react-router-dom';
+import { all, call, put, select, takeEvery } from 'redux-saga/effects';
 import { GET_MOVIES, GET_MOVIES_FILTER_BY_NAME } from '../../API';
 import { fetchError, fetchStarted, fetchSuccess } from '../core/slices/movies';
+
+function* createQueryString() {
+  const filters = yield select((state) => state.filters);
+  const params = createSearchParams(filters);
+}
 
 function* fetchMovies(action) {
   try {
     yield put(fetchStarted());
     let fetchInfo = {};
-    if (action.payload?.name) {
-      fetchInfo = yield call(GET_MOVIES_FILTER_BY_NAME, action.payload.name);
+    const filters = yield select((state) => state.filters);
+    const params = yield call(createSearchParams, filters);
+    if (filters) {
+      fetchInfo = yield call(GET_MOVIES_FILTER_BY_NAME, params.toString());
     } else {
       fetchInfo = yield call(GET_MOVIES);
     }
@@ -20,6 +28,8 @@ function* fetchMovies(action) {
 }
 
 function* watchFetchMovies() {
+  // throttle para busca enquanto usuário digita
+  //yield throttle(1000, 'FETCH_MOVIES', fetchMovies);
   yield takeEvery('FETCH_MOVIES', fetchMovies);
 }
 

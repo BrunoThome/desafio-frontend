@@ -3,9 +3,15 @@ import styled from 'styled-components';
 import MovieCardStars from './MovieCardStars';
 
 const StyledMovieCard = styled.div`
+  display: grid;
+  grid-template-rows: 1fr auto;
   box-shadow: 2px 2px 5px 0 #0003;
   padding: 0.5rem;
   background: #fff;
+
+  @media (min-width: 720px) {
+    grid-template-rows: 2fr auto;
+  }
 `;
 
 const StyledMovieCardImage = styled.img`

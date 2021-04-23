@@ -9,9 +9,9 @@ export function GET_MOVIES() {
   };
 }
 
-export function GET_MOVIES_FILTER_BY_NAME(name) {
+export function GET_MOVIES_FILTER_BY_NAME(query) {
   return {
-    url: `${URL_API}/movies?name_like=${name}`,
+    url: `${URL_API}/movies?${query}`,
     options: {
       methos: 'GET',
     },

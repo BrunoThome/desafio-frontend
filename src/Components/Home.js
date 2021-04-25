@@ -3,19 +3,17 @@ import { Container } from './Helper/Layout';
 import Filter from './Filter/Filter';
 import MovieList from './Movies/MovieList';
 import styled from 'styled-components';
-import { useDispatch, useSelector } from 'react-redux';
 import { GoSettings } from 'react-icons/go';
 
 const StyledHome = styled.section`
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
+  gap: 0.5rem;
   margin-top: 2rem;
 
   @media (min-width: 720px) {
     grid-template-columns: 1fr 4fr;
   }
-  justify-content: center;
 `;
 
 const StyledMobileFilterWrapper = styled.div`

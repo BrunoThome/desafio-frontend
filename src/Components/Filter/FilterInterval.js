@@ -3,10 +3,16 @@ import styled from 'styled-components';
 
 const StyledFilterIntervalWrapper = styled.div`
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.5rem;
+  padding: 0.5rem 0;
 `;
-const StyledFilterIntervalField = styled.div``;
+
+const StyledFilterIntervalTitle = styled.h4``;
+
+const StyledFilterIntervalFields = styled.div``;
+
+const StyledFilterIntervalField = styled.div`
+  display: grid;
+`;
 
 const FilterInterval = ({
   label,
@@ -22,9 +28,9 @@ const FilterInterval = ({
   endSetValue,
 }) => {
   return (
-    <>
-      <h4>{label}</h4>
-      <StyledFilterIntervalWrapper>
+    <StyledFilterIntervalWrapper>
+      <StyledFilterIntervalTitle>{label}</StyledFilterIntervalTitle>
+      <StyledFilterIntervalFields>
         <StyledFilterIntervalField>
           <label htmlFor={startName}>{startLabel}</label>
           <input
@@ -45,8 +51,8 @@ const FilterInterval = ({
             onChange={({ target }) => endSetValue(target.value)}
           />
         </StyledFilterIntervalField>
-      </StyledFilterIntervalWrapper>
-    </>
+      </StyledFilterIntervalFields>
+    </StyledFilterIntervalWrapper>
   );
 };
 

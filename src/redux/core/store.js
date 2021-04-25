@@ -4,10 +4,9 @@ import {
   getDefaultMiddleware,
 } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
-import ReduxQuerySync from 'redux-query-sync';
 import rootSaga from '../saga/sagas';
 import movies from './slices/movies';
-import filters, { setGenre, setName, setRate } from './slices/filters';
+import filters from './slices/filters';
 import { querySync } from './helper/querySync';
 
 const sagaMiddleware = createSagaMiddleware();

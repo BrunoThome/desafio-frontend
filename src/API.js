@@ -1,15 +1,6 @@
 const URL_API = 'http://192.168.15.13:5000';
 
-export function GET_MOVIES() {
-  return {
-    url: `${URL_API}/movies`,
-    options: {
-      method: 'GET',
-    },
-  };
-}
-
-export function GET_MOVIES_FILTER_BY_NAME(query) {
+export function GET_MOVIES(query) {
   return {
     url: `${URL_API}/movies/?${query}`,
     options: {
@@ -27,6 +18,15 @@ export function POST_MOVIE(body) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(body),
+    },
+  };
+}
+
+export function DELETE_MOVIE(id) {
+  return {
+    url: `${URL_API}/movies/${id}`,
+    options: {
+      method: 'DELETE',
     },
   };
 }

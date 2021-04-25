@@ -26,7 +26,7 @@ function App() {
         <Header />
         <StyledAppBody>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" end element={<Home />} />
             <Route path="register" element={<MovieRegister />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

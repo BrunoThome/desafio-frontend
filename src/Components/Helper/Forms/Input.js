@@ -2,11 +2,22 @@ import React from 'react';
 import styled from 'styled-components';
 import Error from '../Error';
 
-const StyledInputWrapper = styled.div``;
+const StyledInputWrapper = styled.div`
+  margin-bottom: 0.5rem;
+`;
 
 const StyledLabel = styled.label``;
 
-const StyledInput = styled.input``;
+const StyledInput = styled.input`
+  border: 1px solid #333;
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.8rem;
+  border-radius: 0.4rem;
+  background: #fff8;
+  transition: 0.2s;
+`;
 
 function Input({
   label,

@@ -57,25 +57,11 @@
       "id": 10
     },
     {
-      "name": "Esquadrão Trovão",
-      "releaseYear": "2021",
-      "genre": "Comédia",
-      "rate": "1",
-      "id": 11
-    },
-    {
       "name": "Jack Reacher",
       "releaseYear": "2012",
       "genre": "Ação",
       "rate": "5",
       "id": 12
-    },
-    {
-      "name": "Depois do tombo",
-      "releaseYear": "2021",
-      "genre": "Comédia",
-      "rate": "3",
-      "id": 13
     },
     {
       "name": "Filme X",
@@ -89,21 +75,7 @@
       "releaseYear": "2021",
       "genre": "Suspense",
       "rate": "5",
-      "id": 15
-    },
-    {
-      "name": "Filme X",
-      "releaseYear": "2021",
-      "genre": "Suspense",
-      "rate": "5",
       "id": 16
-    },
-    {
-      "name": "Filme X",
-      "releaseYear": "2021",
-      "genre": "Suspense",
-      "rate": "5",
-      "id": 17
     },
     {
       "name": "Filme X",
@@ -138,20 +110,6 @@
       "releaseYear": "2021",
       "genre": "Suspense",
       "rate": "5",
-      "id": 22
-    },
-    {
-      "name": "Filme X",
-      "releaseYear": "2021",
-      "genre": "Suspense",
-      "rate": "5",
-      "id": 23
-    },
-    {
-      "name": "Filme X",
-      "releaseYear": "2021",
-      "genre": "Suspense",
-      "rate": "5",
       "id": 24
     },
     {
@@ -166,56 +124,7 @@
       "releaseYear": "2021",
       "genre": "Suspense",
       "rate": "5",
-      "id": 26
-    },
-    {
-      "name": "Filme X",
-      "releaseYear": "2021",
-      "genre": "Suspense",
-      "rate": "5",
-      "id": 27
-    },
-    {
-      "name": "Filme X",
-      "releaseYear": "2021",
-      "genre": "Suspense",
-      "rate": "5",
       "id": 28
-    },
-    {
-      "name": "Filme X",
-      "releaseYear": "2021",
-      "genre": "Suspense",
-      "rate": "5",
-      "id": 29
-    },
-    {
-      "name": "Filme X",
-      "releaseYear": "2021",
-      "genre": "Suspense",
-      "rate": "5",
-      "id": 30
-    },
-    {
-      "name": "Filme X",
-      "releaseYear": "2021",
-      "genre": "Suspense",
-      "rate": "5",
-      "id": 31
-    },
-    {
-      "name": "Filme X",
-      "releaseYear": "2021",
-      "genre": "Suspense",
-      "rate": "5",
-      "id": 32
-    },
-    {
-      "name": "Filme X",
-      "releaseYear": "2021",
-      "genre": "Suspense",
-      "rate": "5",
-      "id": 33
     },
     {
       "name": "Filme X",
@@ -237,6 +146,36 @@
       "genre": "Suspense",
       "rate": "5",
       "id": 36
+    },
+    {
+      "name": "Cidade invisivel",
+      "releaseYear": "2000",
+      "genre": "Ação",
+      "rate": "5",
+      "id": 37
+    },
+    {
+      "name": "Casa de papel",
+      "releaseYear": "2005",
+      "genre": "Suspense",
+      "rate": "5",
+      "id": 38
+    },
+    {
+      "name": "Casa XYZ",
+      "releaseYear": "2021",
+      "genre": "Comédia",
+      "rate": "5",
+      "imageURL": "https://i.imgur.com/IBItATn.png",
+      "id": 39
+    },
+    {
+      "name": "XYZ",
+      "releaseYear": "2021",
+      "genre": "Suspense",
+      "rate": "5",
+      "imageURL": "https://i.imgur.com/Gwaqv3q.png",
+      "id": 41
     }
   ]
 }

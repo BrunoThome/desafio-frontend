@@ -1,4 +1,23 @@
 import React from 'react';
+import styled from 'styled-components';
+import Error from '../Error';
+
+const StyledSelectWrapper = styled.div`
+  margin-bottom: 0.5rem;
+`;
+
+const StyledLabel = styled.label``;
+
+const StyledSelect = styled.select`
+  border: 1px solid #333;
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.8rem;
+  border-radius: 0.4rem;
+  background: #fff8;
+  transition: 0.2s;
+`;
 
 const Select = ({
   label,
@@ -13,9 +32,9 @@ const Select = ({
   ...props
 }) => {
   return (
-    <div>
-      <label htmlFor={name}>{label}</label>
-      <select
+    <StyledSelectWrapper>
+      <StyledLabel htmlFor={name}>{label}</StyledLabel>
+      <StyledSelect
         name={name}
         id={name}
         value={value}
@@ -33,9 +52,9 @@ const Select = ({
             </option>
           );
         })}
-      </select>
-      {error && <p>{error}</p>}
-    </div>
+      </StyledSelect>
+      {error && <Error error={error} />}
+    </StyledSelectWrapper>
   );
 };
 

@@ -1,69 +1,105 @@
 import React from 'react';
+import styled from 'styled-components';
 import { POST_MOVIE } from '../../API';
 import useFetch from '../../Hooks/useFetch';
 import useForm from '../../Hooks/useForm';
+import Button from '../Helper/Forms/Button';
 import Input from '../Helper/Forms/Input';
 import Select from '../Helper/Forms/Select';
+import MovieCard from '../../Components/Movies/MovieCard';
 import { Container } from '../Helper/Layout';
+import { useNavigate } from 'react-router-dom';
+
+const StyledRegisterWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem;
+`;
+
+const StyledPreview = styled.div`
+  display: grid;
+  grid-area: 1/2/2/2;
+`;
+
+const StyledForm = styled.form`
+  margin-top: 0.5rem;
+`;
 
 const MovieRegister = () => {
   const name = useForm();
-  const releaseDate = useForm('number');
+  const releaseYear = useForm('number');
   const genre = useForm();
+  const imageURL = useForm();
   const rate = useForm('number');
   const genres = ['Ação', 'Suspense', 'Comédia', 'Romântico'];
   const { loading, data, error, request } = useFetch();
+  const navigate = useNavigate();
 
   async function handleSubmit(event) {
     event.preventDefault();
     const newMovie = {
       name: name.value,
-      releaseDate: releaseDate.value,
+      releaseYear: releaseYear.value,
       genre: genre.value,
       rate: rate.value,
+      imageURL: imageURL.value,
     };
     name.validate();
-    releaseDate.validate();
+    releaseYear.validate();
     genre.validate();
     rate.validate();
+    imageURL.validate();
     if (
       name.validate() &&
-      releaseDate.validate() &&
+      releaseYear.validate() &&
       genre.validate() &&
-      rate.validate()
+      rate.validate() &&
+      imageURL.validate()
     ) {
       const { url, options } = POST_MOVIE(newMovie);
-      await request(url, options);
+      const response = await request(url, options);
+      if (response.response.status === 201) {
+        navigate('/', { replace: true });
+      }
     }
   }
 
   return (
     <Container>
-      <form onSubmit={handleSubmit}>
-        <Input type="text" name="name" label="Nome" {...name} />
-        <Input
-          type="number"
-          name="name"
-          label="Ano de lançamento"
-          min="0"
-          {...releaseDate}
-        />
-        <Select name="name" label="Nome" options={genres} {...genre} />
-        <Input
-          type="number"
-          name="name"
-          label="Nota"
-          min="0"
-          max="5"
-          {...rate}
-        />
-        {loading ? (
-          <button disabled>Cadastrando...</button>
-        ) : (
-          <button>Cadastrar</button>
-        )}
-        {error && <p>{error}</p>}
-      </form>
+      <StyledRegisterWrapper>
+        <StyledForm onSubmit={handleSubmit}>
+          <Input type="text" name="name" label="Nome" {...name} />
+          <Input
+            type="number"
+            name="name"
+            label="Ano de lançamento"
+            min="0"
+            {...releaseYear}
+          />
+          <Select name="name" label="Gênero" options={genres} {...genre} />
+          <Input
+            type="number"
+            name="name"
+            label="Nota"
+            min="0"
+            max="5"
+            {...rate}
+          />
+          <Input
+            type="text"
+            name="imageURL"
+            label="URL da imagem"
+            {...imageURL}
+          />
+          {loading ? (
+            <Button disabled> Cadastrando...</Button>
+          ) : (
+            <Button>Cadastrar</Button>
+          )}
+          {error && <p>{error}</p>}
+        </StyledForm>
+      </StyledRegisterWrapper>
     </Container>
   );
 };

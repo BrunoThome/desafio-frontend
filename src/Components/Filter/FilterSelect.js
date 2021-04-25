@@ -1,6 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const StyledSelectWrapper = styled.div`
+  padding: 0.5rem 0;
+`;
+
+const StyledFilterSelectTitle = styled.h4``;
+
 const StyledOptionWrapper = styled.ul``;
 const StyledOption = styled.li`
   display: flex;
@@ -23,8 +29,8 @@ const FilterSelect = ({ label, name, options, value, setValue }) => {
   }
 
   return (
-    <div>
-      {label}
+    <StyledSelectWrapper>
+      <StyledFilterSelectTitle>{label}</StyledFilterSelectTitle>
       <StyledOptionWrapper>
         {options.map((option) => {
           return (
@@ -42,7 +48,7 @@ const FilterSelect = ({ label, name, options, value, setValue }) => {
           );
         })}
       </StyledOptionWrapper>
-    </div>
+    </StyledSelectWrapper>
   );
 };
 

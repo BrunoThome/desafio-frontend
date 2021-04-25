@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import MovieCardStars from './MovieCardStars';
 import MovieImage from './MovieImage';
+import MovieRemove from './MovieRemove';
 
 const StyledMovieCard = styled.div`
   display: grid;
@@ -13,6 +14,11 @@ const StyledMovieCard = styled.div`
   @media (min-width: 720px) {
     grid-template-rows: 2fr auto;
   }
+`;
+
+const StyledMovieCardInfoWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 2fr 1fr;
 `;
 
 const StyledMovieCardInfo = styled.div``;
@@ -52,18 +58,21 @@ const MovieCard = ({ movie }) => {
   return (
     <StyledMovieCard>
       <MovieImage alt={movie.name} src={movie.imageURL || ''} />
-      <StyledMovieCardInfo>
-        <StyledMovieCardInfoTitle>{movie.name}</StyledMovieCardInfoTitle>
-        <StyledMovieCardInfoDetails>
-          Lançado em: <b>{movie.releaseYear}</b>
-        </StyledMovieCardInfoDetails>
-        <StyledMovieCardInfoDetails>
-          Genero: <b>{movie.genre}</b>
-        </StyledMovieCardInfoDetails>
-        <StyledMovieCardInfoDetails>
-          Avaliação: <MovieCardStars stars={movie.rate} />
-        </StyledMovieCardInfoDetails>
-      </StyledMovieCardInfo>
+      <StyledMovieCardInfoTitle>{movie.name}</StyledMovieCardInfoTitle>
+      <StyledMovieCardInfoWrapper>
+        <StyledMovieCardInfo>
+          <StyledMovieCardInfoDetails>
+            Lançado em: <b>{movie.releaseYear}</b>
+          </StyledMovieCardInfoDetails>
+          <StyledMovieCardInfoDetails>
+            Genero: <b>{movie.genre}</b>
+          </StyledMovieCardInfoDetails>
+          <StyledMovieCardInfoDetails>
+            Avaliação: <MovieCardStars stars={movie.rate} />
+          </StyledMovieCardInfoDetails>
+        </StyledMovieCardInfo>
+        <MovieRemove id={movie.id} />
+      </StyledMovieCardInfoWrapper>
     </StyledMovieCard>
   );
 };

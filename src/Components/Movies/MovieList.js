@@ -1,8 +1,8 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Error from '../Helper/Error';
+import Loading from '../Helper/Loading';
 import Pagination from '../Pagination/Pagination';
 import MovieCard from './MovieCard';
 
@@ -26,7 +26,7 @@ const MovieList = () => {
     dispatch({ type: 'FETCH_MOVIES' });
   }, [dispatch, filters]);
 
-  if (movies.loading) return <p>Carregando</p>;
+  if (movies.loading) return <Loading />;
   if (movies.error) return <Error error={movies.error} />;
   if (movies.data) {
     if (movies.data.total > 0) {

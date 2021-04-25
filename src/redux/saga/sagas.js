@@ -1,24 +1,12 @@
-import {
-  createSearchParams,
-  useLocation,
-  useSearchParams,
-} from 'react-router-dom';
-import {
-  all,
-  call,
-  put,
-  select,
-  takeEvery,
-  takeLatest,
-} from 'redux-saga/effects';
-import { GET_MOVIES, GET_MOVIES_FILTER_BY_NAME } from '../../API';
+import { createSearchParams } from 'react-router-dom';
+import { all, call, put, select, takeLatest } from 'redux-saga/effects';
+import { GET_MOVIES } from '../../API';
 import { fetchError, fetchStarted, fetchSuccess } from '../core/slices/movies';
 
 function* handleFilters() {
   const filters = yield select((state) => state.filters);
   const tempFilter = Object.assign({}, filters);
   for (let filter in tempFilter) {
-    console.log(filter, tempFilter[filter]);
     if (typeof tempFilter[filter] !== 'number') {
       if (tempFilter[filter].length > 0) {
         tempFilter[filter] = tempFilter[filter].split(',');
@@ -30,17 +18,12 @@ function* handleFilters() {
   return tempFilter;
 }
 
-function* fetchMovies(action) {
+function* fetchMovies() {
   try {
     yield put(fetchStarted());
-    let fetchInfo = {};
     const filters = yield call(handleFilters);
     const params = yield call(createSearchParams, filters);
-    if (filters) {
-      fetchInfo = yield call(GET_MOVIES_FILTER_BY_NAME, params.toString());
-    } else {
-      fetchInfo = yield call(GET_MOVIES);
-    }
+    const fetchInfo = yield call(GET_MOVIES, params.toString());
     const response = yield call(fetch, fetchInfo.url, fetchInfo.options);
     const totalMovies = response.headers.get('X-Total-Count');
     const json = yield call([response, 'json']);

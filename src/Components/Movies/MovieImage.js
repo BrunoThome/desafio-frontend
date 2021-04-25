@@ -12,6 +12,8 @@ const skeletonAnimation = keyframes`
 
 const StyledMovieCardImageWrapper = styled.div`
   display: grid;
+  justify-content: center;
+  align-items: center;
 `;
 
 const StyledMovieCardImage = styled.img`

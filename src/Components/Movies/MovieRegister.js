@@ -6,7 +6,6 @@ import useForm from '../../Hooks/useForm';
 import Button from '../Helper/Forms/Button';
 import Input from '../Helper/Forms/Input';
 import Select from '../Helper/Forms/Select';
-import MovieCard from '../../Components/Movies/MovieCard';
 import { Container } from '../Helper/Layout';
 import { useNavigate } from 'react-router-dom';
 
@@ -15,11 +14,6 @@ const StyledRegisterWrapper = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 1rem;
-`;
-
-const StyledPreview = styled.div`
-  display: grid;
-  grid-area: 1/2/2/2;
 `;
 
 const StyledForm = styled.form`
@@ -33,7 +27,7 @@ const MovieRegister = () => {
   const imageURL = useForm();
   const rate = useForm('number');
   const genres = ['Ação', 'Suspense', 'Comédia', 'Romântico'];
-  const { loading, data, error, request } = useFetch();
+  const { loading, error, request } = useFetch();
   const navigate = useNavigate();
 
   async function handleSubmit(event) {

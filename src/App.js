@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from './Components/Home';
 import Header from './Components/Header';
 import NotFound from './Components/NotFound';
 import MovieRegister from './Components/Movies/MovieRegister';
@@ -8,6 +7,9 @@ import styled from 'styled-components';
 
 import './App.css';
 import Footer from './Components/Footer';
+import Loading from './Components/Helper/Loading';
+
+const Home = React.lazy(() => import('./Components/Home'));
 
 const StyledApp = styled.div`
   display: flex;
@@ -22,17 +24,19 @@ const StyledAppBody = styled.main`
 function App() {
   return (
     <StyledApp>
-      <BrowserRouter>
-        <Header />
-        <StyledAppBody>
-          <Routes>
-            <Route path="/" end element={<Home />} />
-            <Route path="register" element={<MovieRegister />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </StyledAppBody>
-        <Footer />
-      </BrowserRouter>
+      <React.Suspense fallback={<Loading />}>
+        <BrowserRouter>
+          <Header />
+          <StyledAppBody>
+            <Routes>
+              <Route path="/" end element={<Home />} />
+              <Route path="register" element={<MovieRegister />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </StyledAppBody>
+          <Footer />
+        </BrowserRouter>
+      </React.Suspense>
     </StyledApp>
   );
 }

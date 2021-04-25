@@ -24,7 +24,7 @@ const MovieRegister = () => {
   const name = useForm();
   const releaseYear = useForm('number');
   const genre = useForm();
-  const imageURL = useForm();
+  const imageURL = useForm(false);
   const rate = useForm('number');
   const genres = ['Ação', 'Suspense', 'Comédia', 'Romântico'];
   const { loading, error, request } = useFetch();
@@ -43,13 +43,11 @@ const MovieRegister = () => {
     releaseYear.validate();
     genre.validate();
     rate.validate();
-    imageURL.validate();
     if (
       name.validate() &&
       releaseYear.validate() &&
       genre.validate() &&
-      rate.validate() &&
-      imageURL.validate()
+      rate.validate()
     ) {
       const { url, options } = POST_MOVIE(newMovie);
       const response = await request(url, options);
@@ -63,11 +61,11 @@ const MovieRegister = () => {
     <Container>
       <StyledRegisterWrapper>
         <StyledForm onSubmit={handleSubmit}>
-          <Input type="text" name="name" label="Nome" {...name} />
+          <Input type="text" name="name" label="Nome *" {...name} />
           <Input
             type="number"
             name="name"
-            label="Ano de lançamento"
+            label="Ano de lançamento *"
             min="0"
             {...releaseYear}
           />
@@ -75,7 +73,7 @@ const MovieRegister = () => {
           <Input
             type="number"
             name="name"
-            label="Nota"
+            label="Nota *"
             min="0"
             max="5"
             {...rate}

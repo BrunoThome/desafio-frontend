@@ -1,4 +1,4 @@
-const URL_API = 'http://192.168.15.13:5000';
+const URL_API = 'http://localhost:5000';
 
 export function GET_MOVIES(query) {
   return {

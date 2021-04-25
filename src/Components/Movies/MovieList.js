@@ -1,8 +1,12 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Error from '../Helper/Error';
+import Pagination from '../Pagination/Pagination';
 import MovieCard from './MovieCard';
+
+const StyledMovieListWrapper = styled.div``;
 
 const StyledMovieList = styled.div`
   display: grid;
@@ -19,20 +23,27 @@ const MovieList = () => {
   const { movies, filters } = useSelector((state) => state);
 
   React.useEffect(() => {
-    dispatch({ type: 'FETCH_MOVIES', payload: { meta: 'FILTERED' } });
+    dispatch({ type: 'FETCH_MOVIES' });
   }, [dispatch, filters]);
 
   if (movies.loading) return <p>Carregando</p>;
   if (movies.error) return <Error error={movies.error} />;
-  if (movies.data)
-    return (
-      <StyledMovieList>
-        {movies.data.map((movie) => {
-          return <MovieCard key={movie.id} movie={movie} />;
-        })}
-      </StyledMovieList>
-    );
-  else return null;
+  if (movies.data) {
+    if (movies.data.total > 0) {
+      return (
+        <StyledMovieListWrapper>
+          <StyledMovieList>
+            {movies.data.movies.map((movie) => {
+              return <MovieCard key={movie.id} movie={movie} />;
+            })}
+          </StyledMovieList>
+          <Pagination />
+        </StyledMovieListWrapper>
+      );
+    } else {
+      return <p>Não foi encontrado nenhum filme.</p>;
+    }
+  } else return null;
 };
 
 export default MovieList;

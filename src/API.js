@@ -11,7 +11,7 @@ export function GET_MOVIES() {
 
 export function GET_MOVIES_FILTER_BY_NAME(query) {
   return {
-    url: `${URL_API}/movies?${query}`,
+    url: `${URL_API}/movies/?${query}`,
     options: {
       methos: 'GET',
     },

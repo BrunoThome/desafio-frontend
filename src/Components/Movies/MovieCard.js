@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import MovieCardStars from './MovieCardStars';
+import MovieImage from './MovieImage';
 
 const StyledMovieCard = styled.div`
   display: grid;
@@ -12,11 +13,6 @@ const StyledMovieCard = styled.div`
   @media (min-width: 720px) {
     grid-template-rows: 2fr auto;
   }
-`;
-
-const StyledMovieCardImage = styled.img`
-  max-height: 250px;
-  margin: 0 auto;
 `;
 
 const StyledMovieCardInfo = styled.div``;
@@ -55,17 +51,11 @@ const StyledMovieCardInfoDetails = styled.span`
 const MovieCard = ({ movie }) => {
   return (
     <StyledMovieCard>
-      <StyledMovieCardImage
-        src={
-          movie.imageURL ||
-          `https://via.placeholder.com/300x500.png?text=${movie.name}`
-        }
-        alt=""
-      />
+      <MovieImage alt={movie.name} src={movie.imageURL || ''} />
       <StyledMovieCardInfo>
         <StyledMovieCardInfoTitle>{movie.name}</StyledMovieCardInfoTitle>
         <StyledMovieCardInfoDetails>
-          Lançado em: <b>{movie.releaseDate}</b>
+          Lançado em: <b>{movie.releaseYear}</b>
         </StyledMovieCardInfoDetails>
         <StyledMovieCardInfoDetails>
           Genero: <b>{movie.genre}</b>

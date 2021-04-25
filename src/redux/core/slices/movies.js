@@ -4,7 +4,10 @@ const movies = createSlice({
   name: 'movies',
   initialState: {
     loading: false,
-    data: null,
+    data: {
+      total: 0,
+      movies: null,
+    },
     error: null,
   },
   reducers: {

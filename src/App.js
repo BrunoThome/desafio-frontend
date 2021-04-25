@@ -7,6 +7,7 @@ import MovieRegister from './Components/Movies/MovieRegister';
 import styled from 'styled-components';
 
 import './App.css';
+import Footer from './Components/Footer';
 
 const StyledApp = styled.div`
   display: flex;
@@ -30,6 +31,7 @@ function App() {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </StyledAppBody>
+        <Footer />
       </BrowserRouter>
     </StyledApp>
   );

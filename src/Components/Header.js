@@ -7,7 +7,7 @@ const StyledHeader = styled.header`
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
   position: fixed;
   width: 100%;
-  z-index: 100;
+  z-index: 1000;
   background: #fb1;
   top: 0;
 `;
@@ -67,9 +67,7 @@ const Header = () => {
     <StyledHeader>
       <Container>
         <StyledNav>
-          <StyledLogo>
-            <Link to="/">MyMovies</Link>
-          </StyledLogo>
+          <StyledLogo>MyMovies</StyledLogo>
           <StyledLinks>
             <NavLink to="/" activeClassName="active" end>
               meus filmes

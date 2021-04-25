@@ -1,26 +1,38 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { initFilter } from '../helper/initFilter';
 
 const filters = createSlice({
   name: 'filters',
-  initialState: initFilter(),
+  initialState: { _limit: 6 },
   reducers: {
     setName(state, action) {
       state.name_like = action.payload;
     },
     setGenre(state, action) {
-      state.genre = action.payload;
+      state.genre = action.payload.toString();
     },
     setRate(state, action) {
-      state.rate = action.payload;
+      state.rate = action.payload.toString();
     },
-    setReleaseDate(state, action) {
-      state.releaseDate = action.payload;
+    setStartReleaseYear(state, action) {
+      state.releaseYear_gte = action.payload;
     },
-    setFilter(state, action) {
-      state.name_like = action.payload.name_like;
-      state.genre = action.payload.genre;
-      state.rate = action.payload.rate;
+    setEndReleaseYear(state, action) {
+      state.releaseYear_lte = action.payload;
+    },
+    setPage(state, action) {
+      state._page = action.payload;
+    },
+    setLimit(state, action) {
+      state._limit = action.payload;
+    },
+    resetFilter(state) {
+      state._limit = 6;
+      state.name_like = '';
+      state.genre = '';
+      state.rate = '';
+      state.releaseYear_gte = '';
+      state.releaseYear_lte = '';
+      state._page = 1;
     },
   },
 });
@@ -29,7 +41,10 @@ export const {
   setName,
   setGenre,
   setRate,
-  setReleaseDate,
-  setFilter,
+  setStartReleaseYear,
+  setEndReleaseYear,
+  setLimit,
+  setPage,
+  resetFilter,
 } = filters.actions;
 export default filters.reducer;

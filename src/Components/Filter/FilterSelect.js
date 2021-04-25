@@ -8,13 +8,17 @@ const StyledOption = styled.li`
 
 const FilterSelect = ({ label, name, options, value, setValue }) => {
   function handleChange({ target }) {
+    const tempValue = value ? value.split(',') : [];
     if (target.checked) {
-      if (!value.includes(target.value)) {
-        setValue([...value, target.value]);
-      }
+      if (tempValue) {
+        if (!tempValue.includes(target.value)) {
+          setValue([...tempValue, target.value].toString());
+        }
+      } else setValue([target.value]);
     } else {
-      value.splice(value.indexOf(target.value), 1);
-      setValue([...value]);
+      const newValue = [...tempValue];
+      newValue.splice(newValue.indexOf(target.value), 1);
+      setValue([...newValue].toString());
     }
   }
 
@@ -31,7 +35,7 @@ const FilterSelect = ({ label, name, options, value, setValue }) => {
                 name={name}
                 value={option}
                 onChange={handleChange}
-                checked={value.includes(option)}
+                checked={value && value.includes(option)}
               />
               <label htmlFor={option}> {option} </label>
             </StyledOption>

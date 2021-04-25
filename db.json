@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Missão Impossível",
-      "releaseDate": 1996,
+      "releaseYear": 1996,
       "imageURL": "https://cdn.awsli.com.br/600x450/393/393351/produto/45882239/2cd5179169.jpg",
       "genre": "Ação",
       "rate": 3
@@ -11,7 +11,7 @@
     {
       "id": 2,
       "name": "Missão Impossível II",
-      "releaseDate": 1996,
+      "releaseYear": 1996,
       "imageURL": "https://cdn.awsli.com.br/600x450/393/393351/produto/45882239/2cd5179169.jpg",
       "genre": "Ação",
       "rate": 3
@@ -19,7 +19,7 @@
     {
       "id": 3,
       "name": "Missão Impossível III",
-      "releaseDate": 1996,
+      "releaseYear": 1996,
       "imageURL": "https://cdn.awsli.com.br/393/393351/produto/45891793/31d6bb74c8.jpg",
       "genre": "Ação",
       "rate": 3
@@ -27,7 +27,7 @@
     {
       "id": 4,
       "name": "Missão Impossível IV",
-      "releaseDate": 1996,
+      "releaseYear": 1996,
       "imageURL": "https://cdn.awsli.com.br/600x450/393/393351/produto/45882239/2cd5179169.jpg",
       "genre": "Ação",
       "rate": 3
@@ -35,14 +35,14 @@
     {
       "id": 5,
       "name": "Missão Impossível V",
-      "releaseDate": 1996,
+      "releaseYear": 1996,
       "imageURL": "https://upload.wikimedia.org/wikipedia/pt/7/74/Mission_Impossible_%E2%80%93_Rogue_Nation_poster.jpg",
       "genre": "Ação",
       "rate": 3
     },
     {
       "name": "Cidade de Deus",
-      "releaseDate": "2010",
+      "releaseYear": "2010",
       "genre": "Suspense",
       "imageURL": "https://cdn.awsli.com.br/600x450/393/393351/produto/45882239/2cd5179169.jpg",
       "rate": "5",
@@ -50,7 +50,7 @@
     },
     {
       "name": "Monstros SA",
-      "releaseDate": "2000",
+      "releaseYear": "2000",
       "genre": "Comédia",
       "imageURL": "https://cdn.awsli.com.br/600x450/393/393351/produto/45882239/2cd5179169.jpg",
       "rate": "5",
@@ -58,17 +58,185 @@
     },
     {
       "name": "Esquadrão Trovão",
-      "releaseDate": "2021",
+      "releaseYear": "2021",
       "genre": "Comédia",
       "rate": "1",
       "id": 11
     },
     {
       "name": "Jack Reacher",
-      "releaseDate": "2012",
+      "releaseYear": "2012",
       "genre": "Ação",
       "rate": "5",
       "id": 12
+    },
+    {
+      "name": "Depois do tombo",
+      "releaseYear": "2021",
+      "genre": "Comédia",
+      "rate": "3",
+      "id": 13
+    },
+    {
+      "name": "Filme X",
+      "releaseYear": "2021",
+      "genre": "Suspense",
+      "rate": "5",
+      "id": 14
+    },
+    {
+      "name": "Filme X",
+      "releaseYear": "2021",
+      "genre": "Suspense",
+      "rate": "5",
+      "id": 15
+    },
+    {
+      "name": "Filme X",
+      "releaseYear": "2021",
+      "genre": "Suspense",
+      "rate": "5",
+      "id": 16
+    },
+    {
+      "name": "Filme X",
+      "releaseYear": "2021",
+      "genre": "Suspense",
+      "rate": "5",
+      "id": 17
+    },
+    {
+      "name": "Filme X",
+      "releaseYear": "2021",
+      "genre": "Suspense",
+      "rate": "5",
+      "id": 18
+    },
+    {
+      "name": "Filme X",
+      "releaseYear": "2021",
+      "genre": "Suspense",
+      "rate": "5",
+      "id": 19
+    },
+    {
+      "name": "Filme X",
+      "releaseYear": "2021",
+      "genre": "Suspense",
+      "rate": "5",
+      "id": 20
+    },
+    {
+      "name": "Filme X",
+      "releaseYear": "2021",
+      "genre": "Suspense",
+      "rate": "5",
+      "id": 21
+    },
+    {
+      "name": "Filme X",
+      "releaseYear": "2021",
+      "genre": "Suspense",
+      "rate": "5",
+      "id": 22
+    },
+    {
+      "name": "Filme X",
+      "releaseYear": "2021",
+      "genre": "Suspense",
+      "rate": "5",
+      "id": 23
+    },
+    {
+      "name": "Filme X",
+      "releaseYear": "2021",
+      "genre": "Suspense",
+      "rate": "5",
+      "id": 24
+    },
+    {
+      "name": "Filme X",
+      "releaseYear": "2021",
+      "genre": "Suspense",
+      "rate": "5",
+      "id": 25
+    },
+    {
+      "name": "Filme X",
+      "releaseYear": "2021",
+      "genre": "Suspense",
+      "rate": "5",
+      "id": 26
+    },
+    {
+      "name": "Filme X",
+      "releaseYear": "2021",
+      "genre": "Suspense",
+      "rate": "5",
+      "id": 27
+    },
+    {
+      "name": "Filme X",
+      "releaseYear": "2021",
+      "genre": "Suspense",
+      "rate": "5",
+      "id": 28
+    },
+    {
+      "name": "Filme X",
+      "releaseYear": "2021",
+      "genre": "Suspense",
+      "rate": "5",
+      "id": 29
+    },
+    {
+      "name": "Filme X",
+      "releaseYear": "2021",
+      "genre": "Suspense",
+      "rate": "5",
+      "id": 30
+    },
+    {
+      "name": "Filme X",
+      "releaseYear": "2021",
+      "genre": "Suspense",
+      "rate": "5",
+      "id": 31
+    },
+    {
+      "name": "Filme X",
+      "releaseYear": "2021",
+      "genre": "Suspense",
+      "rate": "5",
+      "id": 32
+    },
+    {
+      "name": "Filme X",
+      "releaseYear": "2021",
+      "genre": "Suspense",
+      "rate": "5",
+      "id": 33
+    },
+    {
+      "name": "Filme X",
+      "releaseYear": "2021",
+      "genre": "Suspense",
+      "rate": "5",
+      "id": 34
+    },
+    {
+      "name": "Filme X",
+      "releaseYear": "2021",
+      "genre": "Suspense",
+      "rate": "5",
+      "id": 35
+    },
+    {
+      "name": "Filme X",
+      "releaseYear": "2021",
+      "genre": "Suspense",
+      "rate": "5",
+      "id": 36
     }
   ]
 }

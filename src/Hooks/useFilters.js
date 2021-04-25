@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
 
-export function createQueryString() {
+export function useQueryString() {
   const state = useSelector((state) => state.filters);
 }

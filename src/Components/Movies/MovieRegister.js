@@ -11,9 +11,11 @@ import { useNavigate } from 'react-router-dom';
 
 const StyledRegisterWrapper = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 1rem;
+  grid-template-columns: 1fr;
+
+  @media (min-width: 720px) {
+    grid-template-columns: 1fr 1fr;
+  }
 `;
 
 const StyledForm = styled.form`
